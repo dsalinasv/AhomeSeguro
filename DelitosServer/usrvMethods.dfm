@@ -8,7 +8,6 @@ object srvMethods: TsrvMethods
       'Password=masterkey'
       'User_Name=sysdba'
       'DriverID=FB')
-    Connected = True
     LoginPrompt = False
     Left = 24
     Top = 8

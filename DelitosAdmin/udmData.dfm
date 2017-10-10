@@ -11,13 +11,11 @@ object dmData: TdmData
       'DriverName=DataSnap'
       'HostName=localhost'
       'port=211')
-    Connected = True
     Left = 24
     Top = 16
   end
   object dspConnection: TDSProviderConnection
     ServerClassName = 'TsrvMethods'
-    Connected = True
     SQLConnection = cntData
     Left = 88
     Top = 16
