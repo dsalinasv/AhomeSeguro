@@ -1,0 +1,243 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 831
+  ClientWidth = 307
+  FormFactor.Width = 520
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object ScrollBox1: TScrollBox
+    Align = Client
+    Size.Width = 307.000000000000000000
+    Size.Height = 831.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Viewport.Width = 307.000000000000000000
+    Viewport.Height = 831.000000000000000000
+    object Label2: TLabel
+      Position.X = 16.000000000000000000
+      Position.Y = 552.000000000000000000
+      Size.Width = 265.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Toma la foto de evidencia'
+      TabOrder = 15
+    end
+    object ComboBox1: TComboBox
+      Anchors = [akLeft, akTop, akRight]
+      Position.X = 16.000000000000000000
+      Position.Y = 280.000000000000000000
+      Size.Width = 533.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 14
+    end
+    object Label3: TLabel
+      Position.X = 16.000000000000000000
+      Position.Y = 256.000000000000000000
+      Size.Width = 265.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Elije el tipo de delito'
+      TabOrder = 21
+    end
+    object rbAyuda: TRadioButton
+      Anchors = [akTop, akRight]
+      GroupName = 'Reporte'
+      Position.X = 415.000000000000000000
+      Position.Y = 232.000000000000000000
+      Size.Width = 136.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Solicitar ayuda'
+    end
+    object rbTestigo: TRadioButton
+      Anchors = [akTop, akRight]
+      GroupName = 'Persona'
+      Position.X = 463.000000000000000000
+      Position.Y = 176.000000000000000000
+      Size.Width = 89.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Testigo'
+    end
+    object rbAfectado: TRadioButton
+      GroupName = 'Persona'
+      IsChecked = True
+      Position.X = 8.000000000000000000
+      Position.Y = 176.000000000000000000
+      Size.Width = 201.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Afectado directamente'
+    end
+    object rbAnonimo: TRadioButton
+      GroupName = 'Reporte'
+      IsChecked = True
+      Position.X = 8.000000000000000000
+      Position.Y = 232.000000000000000000
+      Size.Width = 153.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Reporte an'#243'nimo'
+    end
+    object MapView1: TMapView
+      Anchors = [akLeft, akTop, akRight]
+      Position.X = 16.000000000000000000
+      Position.Y = 352.000000000000000000
+      Size.Width = 533.000000000000000000
+      Size.Height = 193.000000000000000000
+      Size.PlatformDefault = False
+      Zoom = 14.000000000000000000
+      OnMapClick = MapView1MapClick
+    end
+    object imgCameraView: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Anchors = [akLeft, akTop, akRight]
+      Position.X = 16.000000000000000000
+      Position.Y = 584.000000000000000000
+      Size.Width = 533.000000000000000000
+      Size.Height = 193.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object btnTakePhoto: TButton
+      Action = TakePhotoFromCameraAction1
+      Anchors = [akTop, akRight]
+      Enabled = True
+      ImageIndex = -1
+      Position.X = 510.000000000000000000
+      Position.Y = 536.000000000000000000
+      Size.Width = 47.000000000000000000
+      Size.Height = 38.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'cameratoolbuttonbordered'
+      TabOrder = 0
+    end
+    object btnEnviar: TButton
+      Anchors = [akLeft, akTop, akRight]
+      Position.X = 60.000000000000000000
+      Position.Y = 794.000000000000000000
+      Size.Width = 469.000000000000000000
+      Size.Height = 31.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 24
+      Text = 'Enviar incidencia'
+      OnClick = btnEnviarClick
+    end
+    object Label1: TLabel
+      Position.X = 16.000000000000000000
+      Position.Y = 320.000000000000000000
+      Size.Width = 265.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Selecciona la ubicaci'#243'n'
+      TabOrder = 16
+    end
+    object Label4: TLabel
+      Position.X = 16.000000000000000000
+      Position.Y = 144.000000000000000000
+      Size.Width = 265.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Elije la opci'#243'n que corresponda'
+      TabOrder = 20
+    end
+    object Label5: TLabel
+      Position.X = 16.000000000000000000
+      Position.Y = 200.000000000000000000
+      Size.Width = 265.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Elije la opci'#243'n que corresponda'
+      TabOrder = 17
+    end
+    object Label6: TLabel
+      Position.X = 16.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 265.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Elije la fecha del incidente'
+      TabOrder = 19
+    end
+    object DateEdit1: TDateEdit
+      Date = 43018.000000000000000000
+      Anchors = [akLeft, akTop, akRight]
+      Position.X = 16.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 534.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 25
+    end
+    object TimeEdit1: TTimeEdit
+      Time = 0.135467002314814800
+      Anchors = [akLeft, akTop, akRight]
+      Position.X = 16.000000000000000000
+      Position.Y = 104.000000000000000000
+      Size.Width = 533.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 26
+    end
+    object Label7: TLabel
+      Position.X = 16.000000000000000000
+      Position.Y = 80.000000000000000000
+      Size.Width = 265.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Elije la hora del incidente'
+      TabOrder = 18
+    end
+  end
+  object LocationSensor: TLocationSensor
+    Active = True
+    OnLocationChanged = LocationSensorLocationChanged
+    Left = 208
+    Top = 368
+  end
+  object ActionList1: TActionList
+    Left = 128
+    Top = 368
+    object TakePhotoFromCameraAction1: TTakePhotoFromCameraAction
+      Category = 'Media Library'
+      OnDidFinishTaking = TakePhotoFromCameraAction1DidFinishTaking
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = dmData.cdsDelitos
+    ScopeMappings = <>
+    Left = 40
+    Top = 416
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 44
+    Top = 365
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'NOMBRE'
+      Control = ComboBox1
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+  object fgActivityDialog: TfgActivityDialog
+    Message = 'Enviando'
+    Title = 'Espere'
+    Left = 128
+    Top = 416
+  end
+end
