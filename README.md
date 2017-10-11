@@ -1,6 +1,6 @@
 # Retos de Participación ciudadana
 
-9.- Incidencia delictiva
+# 9.- Incidencia delictiva
 
 ## Objetivo
 Generar mapas de calor por incidencia delictiva en el municipio permitiendo que el ciudadano pueda reportar de manera anónima un delito del cual es afectado o testigo.
