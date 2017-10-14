@@ -9,7 +9,7 @@ object dmData: TdmData
     LoginPrompt = False
     Params.Strings = (
       'DriverName=DataSnap'
-      'HostName=192.168.137.1'
+      'HostName=LOCALHOST'
       'port=211')
     Left = 24
     Top = 16

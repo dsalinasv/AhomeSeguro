@@ -183,6 +183,7 @@ object frmMain: TfrmMain
         object rbAfectado: TRadioButton
           Align = Left
           GroupName = 'Persona'
+          IsChecked = True
           Size.Width = 201.000000000000000000
           Size.Height = 27.000000000000000000
           Size.PlatformDefault = False
@@ -375,11 +376,26 @@ object frmMain: TfrmMain
     OutputConverters = <>
     Left = 44
     Top = 365
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB2
+      FieldName = 'NOMBRE'
+      Control = ComboBox1
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
   end
   object fgActivityDialog: TfgActivityDialog
     Message = 'Enviando'
     Title = 'Espere'
     Left = 128
     Top = 416
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = dmData.cdsDelitos
+    ScopeMappings = <>
+    Left = 136
+    Top = 640
   end
 end

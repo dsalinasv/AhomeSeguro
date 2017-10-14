@@ -50,6 +50,8 @@ type
     btnTakePhoto: TButton;
     imgCameraView: TImage;
     Layout11: TLayout;
+    BindSourceDB2: TBindSourceDB;
+    LinkListControlToField1: TLinkListControlToField;
     procedure LocationSensorLocationChanged(Sender: TObject; const OldLocation,
       NewLocation: TLocationCoord2D);
     procedure MapView1MapClick(const Position: TMapCoordinate);
