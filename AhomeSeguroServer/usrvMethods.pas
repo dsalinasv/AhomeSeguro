@@ -22,12 +22,22 @@ type
     { Private declarations }
   public
     { Public declarations }
+    procedure Alerta(Delito: String; Latitud,Longitud: Double);
   end;
 
 implementation
 
 
 {$R *.dfm}
+
+uses ufrmMain;
+
+{ TsrvMethods }
+
+procedure TsrvMethods.Alerta(Delito: String; Latitud,Longitud: Double);
+begin
+  frmMain.Alerta(Delito, Latitud, Longitud);
+end;
 
 end.
 

@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, System.Actions, Vcl.ActnList, Vcl.Menus,
   Vcl.OleCtrls, SHDocVw, GMMap, GMHeatmap, GMClasses, GMMapVCL, Vcl.StdCtrls,
-  Vcl.ComCtrls, Vcl.DBCtrls, Vcl.ExtCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids;
+  Vcl.ComCtrls, Vcl.DBCtrls, Vcl.ExtCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  frxClass, frxDBSet;
 
 type
   TfrmMain = class(TForm)
@@ -19,7 +20,6 @@ type
     GMHeatmap1: TGMHeatmap;
     WebBrowser1: TWebBrowser;
     sbStatus: TStatusBar;
-    Heatmap1: TMenuItem;
     Panel1: TPanel;
     dbcDelitos: TDBLookupComboBox;
     Label1: TLabel;
@@ -28,11 +28,16 @@ type
     Label3: TLabel;
     dtpFinal: TDateTimePicker;
     btnConsultar: TButton;
+    frxReport1: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
+    Reportes1: TMenuItem;
+    Delitos1: TMenuItem;
     procedure actExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure GMMap1AfterPageLoaded(Sender: TObject; First: Boolean);
     procedure GMMap1MouseMove(Sender: TObject; LatLng: TLatLng; X, Y: Double);
     procedure btnConsultarClick(Sender: TObject);
+    procedure Delitos1Click(Sender: TObject);
   private
     procedure ControlIEVersion;
     { Private declarations }
@@ -127,6 +132,12 @@ begin
   finally
     Reg.Free;
   end;
+end;
+
+procedure TfrmMain.Delitos1Click(Sender: TObject);
+begin
+  if frxReport1.PrepareReport then
+    frxReport1.ShowPreparedReport;
 end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);

@@ -13,4 +13,12 @@ object frmMain: TfrmMain
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
+  object memAlertas: TMemo
+    Left = 0
+    Top = 0
+    Width = 447
+    Height = 201
+    Align = alClient
+    TabOrder = 0
+  end
 end

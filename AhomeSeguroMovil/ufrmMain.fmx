@@ -12,18 +12,18 @@ object frmMain: TfrmMain
   object TabControl1: TTabControl
     Align = Client
     Size.Width = 486.000000000000000000
-    Size.Height = 402.000000000000000000
+    Size.Height = 362.000000000000000000
     Size.PlatformDefault = False
     TabIndex = 0
     TabOrder = 13
     TabPosition = PlatformDefault
     Sizes = (
       486s
-      376s
+      336s
       486s
-      376s
+      336s
       486s
-      376s)
+      336s)
     object Captura: TTabItem
       CustomIcon = <
         item
@@ -40,11 +40,11 @@ object frmMain: TfrmMain
       object ScrollBox1: TScrollBox
         Align = Client
         Size.Width = 486.000000000000000000
-        Size.Height = 376.000000000000000000
+        Size.Height = 336.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 7
-        Viewport.Width = 486.000000000000000000
-        Viewport.Height = 376.000000000000000000
+        Viewport.Width = 470.000000000000000000
+        Viewport.Height = 336.000000000000000000
         object Layout2: TLayout
           Align = Top
           Padding.Left = 5.000000000000000000
@@ -57,7 +57,7 @@ object frmMain: TfrmMain
           Margins.Bottom = 5.000000000000000000
           Position.X = 10.000000000000000000
           Position.Y = 10.000000000000000000
-          Size.Width = 466.000000000000000000
+          Size.Width = 450.000000000000000000
           Size.Height = 63.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 9
@@ -66,7 +66,7 @@ object frmMain: TfrmMain
             Align = Top
             Position.X = 5.000000000000000000
             Position.Y = 30.000000000000000000
-            Size.Width = 456.000000000000000000
+            Size.Width = 440.000000000000000000
             Size.Height = 22.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 25
@@ -75,7 +75,7 @@ object frmMain: TfrmMain
             Align = Top
             Position.X = 5.000000000000000000
             Position.Y = 5.000000000000000000
-            Size.Width = 456.000000000000000000
+            Size.Width = 440.000000000000000000
             Size.Height = 25.000000000000000000
             Size.PlatformDefault = False
             Text = 'Elije la fecha del incidente'
@@ -94,7 +94,7 @@ object frmMain: TfrmMain
           Margins.Bottom = 5.000000000000000000
           Position.X = 10.000000000000000000
           Position.Y = 88.000000000000000000
-          Size.Width = 466.000000000000000000
+          Size.Width = 450.000000000000000000
           Size.Height = 63.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 10
@@ -103,7 +103,7 @@ object frmMain: TfrmMain
             Align = Top
             Position.X = 5.000000000000000000
             Position.Y = 30.000000000000000000
-            Size.Width = 456.000000000000000000
+            Size.Width = 440.000000000000000000
             Size.Height = 22.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 24
@@ -112,7 +112,7 @@ object frmMain: TfrmMain
             Align = Top
             Position.X = 5.000000000000000000
             Position.Y = 5.000000000000000000
-            Size.Width = 456.000000000000000000
+            Size.Width = 440.000000000000000000
             Size.Height = 25.000000000000000000
             Size.PlatformDefault = False
             Text = 'Elije la hora del incidente'
@@ -131,7 +131,7 @@ object frmMain: TfrmMain
           Margins.Bottom = 5.000000000000000000
           Position.X = 10.000000000000000000
           Position.Y = 166.000000000000000000
-          Size.Width = 466.000000000000000000
+          Size.Width = 450.000000000000000000
           Size.Height = 67.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 11
@@ -139,7 +139,7 @@ object frmMain: TfrmMain
             Align = Top
             Position.X = 5.000000000000000000
             Position.Y = 5.000000000000000000
-            Size.Width = 456.000000000000000000
+            Size.Width = 440.000000000000000000
             Size.Height = 25.000000000000000000
             Size.PlatformDefault = False
             Text = 'Elije la opci'#243'n que corresponda'
@@ -149,7 +149,7 @@ object frmMain: TfrmMain
             Align = Top
             Position.X = 5.000000000000000000
             Position.Y = 30.000000000000000000
-            Size.Width = 456.000000000000000000
+            Size.Width = 440.000000000000000000
             Size.Height = 27.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 17
@@ -166,7 +166,7 @@ object frmMain: TfrmMain
             object rbTestigo: TRadioButton
               Align = Right
               GroupName = 'Persona'
-              Position.X = 367.000000000000000000
+              Position.X = 351.000000000000000000
               Size.Width = 89.000000000000000000
               Size.Height = 27.000000000000000000
               Size.PlatformDefault = False
@@ -187,7 +187,7 @@ object frmMain: TfrmMain
           Margins.Bottom = 5.000000000000000000
           Position.X = 10.000000000000000000
           Position.Y = 248.000000000000000000
-          Size.Width = 466.000000000000000000
+          Size.Width = 450.000000000000000000
           Size.Height = 63.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 12
@@ -195,7 +195,7 @@ object frmMain: TfrmMain
             Align = Top
             Position.X = 5.000000000000000000
             Position.Y = 5.000000000000000000
-            Size.Width = 456.000000000000000000
+            Size.Width = 440.000000000000000000
             Size.Height = 25.000000000000000000
             Size.PlatformDefault = False
             Text = 'Elije el tipo de delito'
@@ -206,13 +206,13 @@ object frmMain: TfrmMain
             Items.Strings = (
               'Violaci'#243'n'
               'Asalto'
-              'Robo'
+              'jjj'
               'Trata de blancas'
-              'Venta de drogas')
+              'Venta de Drogas')
             ItemIndex = 0
             Position.X = 5.000000000000000000
             Position.Y = 30.000000000000000000
-            Size.Width = 456.000000000000000000
+            Size.Width = 440.000000000000000000
             Size.Height = 22.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 10
@@ -225,7 +225,7 @@ object frmMain: TfrmMain
           Margins.Right = 10.000000000000000000
           Position.X = 10.000000000000000000
           Position.Y = 321.000000000000000000
-          Size.Width = 466.000000000000000000
+          Size.Width = 450.000000000000000000
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 13
@@ -234,7 +234,7 @@ object frmMain: TfrmMain
             Align = Right
             Enabled = True
             ImageIndex = -1
-            Position.X = 366.000000000000000000
+            Position.X = 350.000000000000000000
             Size.Width = 100.000000000000000000
             Size.Height = 40.000000000000000000
             Size.PlatformDefault = False
@@ -262,7 +262,7 @@ object frmMain: TfrmMain
         Margins.Top = 5.000000000000000000
         Margins.Right = 10.000000000000000000
         Position.X = 10.000000000000000000
-        Position.Y = 336.000000000000000000
+        Position.Y = 296.000000000000000000
         Size.Width = 466.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
@@ -290,7 +290,7 @@ object frmMain: TfrmMain
         Margins.Right = 10.000000000000000000
         Margins.Bottom = 5.000000000000000000
         Size.Width = 466.000000000000000000
-        Size.Height = 316.000000000000000000
+        Size.Height = 276.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 14
         object Label1: TLabel
@@ -306,7 +306,7 @@ object frmMain: TfrmMain
         object MapView1: TMapView
           Align = Client
           Size.Width = 456.000000000000000000
-          Size.Height = 281.000000000000000000
+          Size.Height = 241.000000000000000000
           Size.PlatformDefault = False
           Zoom = 14.000000000000000000
           OnMapClick = MapView1MapClick
@@ -337,7 +337,7 @@ object frmMain: TfrmMain
         Margins.Right = 10.000000000000000000
         Margins.Bottom = 5.000000000000000000
         Size.Width = 466.000000000000000000
-        Size.Height = 316.000000000000000000
+        Size.Height = 276.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 14
         object Layout10: TLayout
@@ -375,7 +375,7 @@ object frmMain: TfrmMain
             end>
           Align = Client
           Size.Width = 456.000000000000000000
-          Size.Height = 281.000000000000000000
+          Size.Height = 241.000000000000000000
           Size.PlatformDefault = False
         end
       end
@@ -385,7 +385,7 @@ object frmMain: TfrmMain
         Margins.Top = 5.000000000000000000
         Margins.Right = 10.000000000000000000
         Position.X = 10.000000000000000000
-        Position.Y = 336.000000000000000000
+        Position.Y = 296.000000000000000000
         Size.Width = 466.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
@@ -399,6 +399,31 @@ object frmMain: TfrmMain
           Text = 'Enviar'
           OnClick = btnEnviarClick
         end
+      end
+    end
+  end
+  object ToolBar1: TToolBar
+    Size.Width = 486.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 21
+    object Rectangle1: TRectangle
+      Align = Client
+      Fill.Color = x00A01127
+      Sides = []
+      Size.Width = 486.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      object Label5: TLabel
+        Align = Client
+        StyledSettings = [Family, Size, Style]
+        Size.Width = 486.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.FontColor = claWhite
+        TextSettings.HorzAlign = Center
+        Text = 'REALIZA UN REPORTE'
+        TabOrder = 0
       end
     end
   end

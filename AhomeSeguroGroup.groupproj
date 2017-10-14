@@ -12,6 +12,9 @@
         <Projects Include="AhomeSeguroMovil\AhomeSeguro.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="BotonPanico\BotonPanico.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -47,14 +50,23 @@
     <Target Name="AhomeSeguro:Make">
         <MSBuild Projects="AhomeSeguroMovil\AhomeSeguro.dproj" Targets="Make"/>
     </Target>
+    <Target Name="BotonPanico">
+        <MSBuild Projects="BotonPanico\BotonPanico.dproj"/>
+    </Target>
+    <Target Name="BotonPanico:Clean">
+        <MSBuild Projects="BotonPanico\BotonPanico.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BotonPanico:Make">
+        <MSBuild Projects="BotonPanico\BotonPanico.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="AhomeSeguroServer;AhomeSeguroAdmin;AhomeSeguro"/>
+        <CallTarget Targets="AhomeSeguroServer;AhomeSeguroAdmin;AhomeSeguro;BotonPanico"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AhomeSeguroServer:Clean;AhomeSeguroAdmin:Clean;AhomeSeguro:Clean"/>
+        <CallTarget Targets="AhomeSeguroServer:Clean;AhomeSeguroAdmin:Clean;AhomeSeguro:Clean;BotonPanico:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AhomeSeguroServer:Make;AhomeSeguroAdmin:Make;AhomeSeguro:Make"/>
+        <CallTarget Targets="AhomeSeguroServer:Make;AhomeSeguroAdmin:Make;AhomeSeguro:Make;BotonPanico:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

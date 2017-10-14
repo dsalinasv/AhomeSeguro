@@ -57,6 +57,9 @@ type
     BindSourceDB3: TBindSourceDB;
     LinkListControlToField1: TLinkListControlToField;
     NextTabAction1: TNextTabAction;
+    ToolBar1: TToolBar;
+    Label5: TLabel;
+    Rectangle1: TRectangle;
     procedure LocationSensorLocationChanged(Sender: TObject; const OldLocation,
       NewLocation: TLocationCoord2D);
     procedure MapView1MapClick(const Position: TMapCoordinate);
