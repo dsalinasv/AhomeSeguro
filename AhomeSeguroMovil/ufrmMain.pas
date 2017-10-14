@@ -140,6 +140,7 @@ begin
               imgCameraView.Bitmap.SaveToStream(memStream);
               cdsIncidenciasFOTO.LoadFromStream(memStream);
               cdsIncidencias.Post;
+              ShowMessage('Incidencia enviada');
             end;
             if TThread.CheckTerminated then
               Exit;
@@ -148,7 +149,6 @@ begin
               TThread.Synchronize(nil, procedure
               begin
                 fgActivityDialog.Hide;
-                Close;
               end);
           end;
         end);

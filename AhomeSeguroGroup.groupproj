@@ -9,7 +9,7 @@
         <Projects Include="AhomeSeguroAdmin\AhomeSeguroAdmin.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="AhomeSeguroMovil\AhomeSeguro.dproj">
+        <Projects Include="AhomeSeguroMovil\AhomeSeguroMovil.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="BotonPanico\BotonPanico.dproj">
@@ -41,14 +41,14 @@
     <Target Name="AhomeSeguroAdmin:Make">
         <MSBuild Projects="AhomeSeguroAdmin\AhomeSeguroAdmin.dproj" Targets="Make"/>
     </Target>
-    <Target Name="AhomeSeguro">
-        <MSBuild Projects="AhomeSeguroMovil\AhomeSeguro.dproj"/>
+    <Target Name="AhomeSeguroMovil">
+        <MSBuild Projects="AhomeSeguroMovil\AhomeSeguroMovil.dproj"/>
     </Target>
-    <Target Name="AhomeSeguro:Clean">
-        <MSBuild Projects="AhomeSeguroMovil\AhomeSeguro.dproj" Targets="Clean"/>
+    <Target Name="AhomeSeguroMovil:Clean">
+        <MSBuild Projects="AhomeSeguroMovil\AhomeSeguroMovil.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="AhomeSeguro:Make">
-        <MSBuild Projects="AhomeSeguroMovil\AhomeSeguro.dproj" Targets="Make"/>
+    <Target Name="AhomeSeguroMovil:Make">
+        <MSBuild Projects="AhomeSeguroMovil\AhomeSeguroMovil.dproj" Targets="Make"/>
     </Target>
     <Target Name="BotonPanico">
         <MSBuild Projects="BotonPanico\BotonPanico.dproj"/>
@@ -60,13 +60,13 @@
         <MSBuild Projects="BotonPanico\BotonPanico.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="AhomeSeguroServer;AhomeSeguroAdmin;AhomeSeguro;BotonPanico"/>
+        <CallTarget Targets="AhomeSeguroServer;AhomeSeguroAdmin;AhomeSeguroMovil;BotonPanico"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AhomeSeguroServer:Clean;AhomeSeguroAdmin:Clean;AhomeSeguro:Clean;BotonPanico:Clean"/>
+        <CallTarget Targets="AhomeSeguroServer:Clean;AhomeSeguroAdmin:Clean;AhomeSeguroMovil:Clean;BotonPanico:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AhomeSeguroServer:Make;AhomeSeguroAdmin:Make;AhomeSeguro:Make;BotonPanico:Make"/>
+        <CallTarget Targets="AhomeSeguroServer:Make;AhomeSeguroAdmin:Make;AhomeSeguroMovil:Make;BotonPanico:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
