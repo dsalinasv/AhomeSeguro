@@ -3,13 +3,13 @@
         <ProjectGuid>{1A3CF827-393B-44DD-A829-97D542BCB610}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="DelitosServer\AhomeSeguroServer.dproj">
+        <Projects Include="AhomeSeguroServer\AhomeSeguroServer.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="DelitosAdmin\AhomeSeguroAdmin.dproj">
+        <Projects Include="AhomeSeguroAdmin\AhomeSeguroAdmin.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="DelitosMovil\AhomeSeguro.dproj">
+        <Projects Include="AhomeSeguroMovil\AhomeSeguro.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -21,31 +21,31 @@
         </BorlandProject>
     </ProjectExtensions>
     <Target Name="AhomeSeguroServer">
-        <MSBuild Projects="DelitosServer\AhomeSeguroServer.dproj"/>
+        <MSBuild Projects="AhomeSeguroServer\AhomeSeguroServer.dproj"/>
     </Target>
     <Target Name="AhomeSeguroServer:Clean">
-        <MSBuild Projects="DelitosServer\AhomeSeguroServer.dproj" Targets="Clean"/>
+        <MSBuild Projects="AhomeSeguroServer\AhomeSeguroServer.dproj" Targets="Clean"/>
     </Target>
     <Target Name="AhomeSeguroServer:Make">
-        <MSBuild Projects="DelitosServer\AhomeSeguroServer.dproj" Targets="Make"/>
+        <MSBuild Projects="AhomeSeguroServer\AhomeSeguroServer.dproj" Targets="Make"/>
     </Target>
     <Target Name="AhomeSeguroAdmin">
-        <MSBuild Projects="DelitosAdmin\AhomeSeguroAdmin.dproj"/>
+        <MSBuild Projects="AhomeSeguroAdmin\AhomeSeguroAdmin.dproj"/>
     </Target>
     <Target Name="AhomeSeguroAdmin:Clean">
-        <MSBuild Projects="DelitosAdmin\AhomeSeguroAdmin.dproj" Targets="Clean"/>
+        <MSBuild Projects="AhomeSeguroAdmin\AhomeSeguroAdmin.dproj" Targets="Clean"/>
     </Target>
     <Target Name="AhomeSeguroAdmin:Make">
-        <MSBuild Projects="DelitosAdmin\AhomeSeguroAdmin.dproj" Targets="Make"/>
+        <MSBuild Projects="AhomeSeguroAdmin\AhomeSeguroAdmin.dproj" Targets="Make"/>
     </Target>
     <Target Name="AhomeSeguro">
-        <MSBuild Projects="DelitosMovil\AhomeSeguro.dproj"/>
+        <MSBuild Projects="AhomeSeguroMovil\AhomeSeguro.dproj"/>
     </Target>
     <Target Name="AhomeSeguro:Clean">
-        <MSBuild Projects="DelitosMovil\AhomeSeguro.dproj" Targets="Clean"/>
+        <MSBuild Projects="AhomeSeguroMovil\AhomeSeguro.dproj" Targets="Clean"/>
     </Target>
     <Target Name="AhomeSeguro:Make">
-        <MSBuild Projects="DelitosMovil\AhomeSeguro.dproj" Targets="Make"/>
+        <MSBuild Projects="AhomeSeguroMovil\AhomeSeguro.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
         <CallTarget Targets="AhomeSeguroServer;AhomeSeguroAdmin;AhomeSeguro"/>
