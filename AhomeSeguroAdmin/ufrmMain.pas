@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, System.Actions, Vcl.ActnList, Vcl.Menus,
   Vcl.OleCtrls, SHDocVw, GMMap, GMHeatmap, GMClasses, GMMapVCL, Vcl.StdCtrls,
-  Vcl.ComCtrls;
+  Vcl.ComCtrls, Vcl.DBCtrls, Vcl.ExtCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids;
 
 type
   TfrmMain = class(TForm)
@@ -20,11 +20,19 @@ type
     WebBrowser1: TWebBrowser;
     sbStatus: TStatusBar;
     Heatmap1: TMenuItem;
+    Panel1: TPanel;
+    dbcDelitos: TDBLookupComboBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    dtpInicial: TDateTimePicker;
+    Label3: TLabel;
+    dtpFinal: TDateTimePicker;
+    btnConsultar: TButton;
     procedure actExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure GMMap1AfterPageLoaded(Sender: TObject; First: Boolean);
     procedure GMMap1MouseMove(Sender: TObject; LatLng: TLatLng; X, Y: Double);
-    procedure Heatmap1Click(Sender: TObject);
+    procedure btnConsultarClick(Sender: TObject);
   private
     procedure ControlIEVersion;
     { Private declarations }
@@ -40,7 +48,7 @@ implementation
 {$R *.dfm}
 
 uses
-  Registry;
+  Registry, udmData;
 
 procedure TfrmMain.actExecute(Sender: TObject);
 var
@@ -56,6 +64,32 @@ begin
     finally
       Free;
     end;
+end;
+
+procedure TfrmMain.btnConsultarClick(Sender: TObject);
+var
+  Point: TLinePoint;
+begin
+  with dmData do
+  begin
+    cdsIncidencias.Close;
+    cdsIncidencias.CommandText:= 'select latitud,longitud from incidencias where fechahora > :inicio and fechahora < :final and id_delito = :delito';
+    cdsIncidencias.ParamByName('inicio').AsDate:= dtpInicial.Date;
+    cdsIncidencias.ParamByName('final').AsDate:= dtpFinal.Date + 1;
+    cdsIncidencias.ParamByName('delito').AsString:= cdsDelitos.FieldByName('ID').AsString;
+    cdsIncidencias.Open;
+    GMHeatmap1.Data.Clear;
+    while not cdsIncidencias.Eof do
+    begin
+      Point := GMHeatmap1.data.Add;
+      Point.Lat := cdsIncidencias.FieldByName('latitud').AsFloat;
+      Point.Lng := cdsIncidencias.FieldByName('longitud').AsFloat;
+      cdsIncidencias.Next;
+    end;
+    GMMap1.SetCenter(25.784, -109);
+    GMMap1.RequiredProp.Zoom := 13;
+    GMHeatmap1.Show:= True;
+  end;
 end;
 
 procedure TfrmMain.ControlIEVersion;
@@ -114,22 +148,6 @@ procedure TfrmMain.GMMap1MouseMove(Sender: TObject; LatLng: TLatLng; X,
 begin
   sbStatus.Panels[0].Text := 'Lat: ' + LatLng.LatToStr(GMMap1.Precision);
   sbStatus.Panels[1].Text := 'Lng: ' + LatLng.LngToStr(GMMap1.Precision);;
-end;
-
-procedure TfrmMain.Heatmap1Click(Sender: TObject);
-var
-  Point: TLinePoint;
-  I: Integer;
-begin
-  for I := 0 to 300 do
-  begin
-    Point := GMHeatmap1.data.Add;
-    Point.Lat := 25.735 + Random(10000000)/100000000;
-    Point.Lng := -109.04 + Random(800000)/10000000;
-  end;
-  GMMap1.SetCenter(25.784, -109);
-  GMMap1.RequiredProp.Zoom := 13;
-  GMHeatmap1.Show:= True;
 end;
 
 end.

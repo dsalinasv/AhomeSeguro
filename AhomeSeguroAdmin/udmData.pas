@@ -12,6 +12,7 @@ type
     dspConnection: TDSProviderConnection;
     cdsDelitos: TClientDataSet;
     dsDelitos: TDataSource;
+    cdsIncidencias: TClientDataSet;
     procedure DataModuleCreate(Sender: TObject);
     procedure cdsAfterPost(DataSet: TDataSet);
     procedure cdsNewRecord(DataSet: TDataSet);

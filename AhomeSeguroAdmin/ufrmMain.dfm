@@ -3,7 +3,7 @@ object frmMain: TfrmMain
   Top = 0
   Caption = 'Admin Delitos'
   ClientHeight = 448
-  ClientWidth = 750
+  ClientWidth = 968
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,14 +18,16 @@ object frmMain: TfrmMain
   TextHeight = 13
   object WebBrowser1: TWebBrowser
     Left = 0
-    Top = 0
-    Width = 750
-    Height = 429
+    Top = 41
+    Width = 968
+    Height = 388
     Align = alClient
     TabOrder = 0
+    ExplicitTop = 0
+    ExplicitWidth = 750
     ExplicitHeight = 468
     ControlData = {
-      4C000000844D0000572C00000000000000000000000000000000000000000000
+      4C0000000C6400001A2800000000000000000000000000000000000000000000
       000000004C000000000000000000000001000000E0D057007335CF11AE690800
       2B2E126208000000000000004C0000000114020000000000C000000000000046
       8000000000000000000000000000000000000000000000000000000000000000
@@ -34,7 +36,7 @@ object frmMain: TfrmMain
   object sbStatus: TStatusBar
     Left = 0
     Top = 429
-    Width = 750
+    Width = 968
     Height = 19
     Panels = <
       item
@@ -43,6 +45,72 @@ object frmMain: TfrmMain
       item
         Width = 200
       end>
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 968
+    Height = 41
+    Align = alTop
+    TabOrder = 2
+    object Label1: TLabel
+      Left = 16
+      Top = 14
+      Width = 64
+      Height = 13
+      Caption = 'Tipo de delito'
+    end
+    object Label2: TLabel
+      Left = 272
+      Top = 14
+      Width = 57
+      Height = 13
+      Caption = 'Fecha inicial'
+    end
+    object Label3: TLabel
+      Left = 544
+      Top = 14
+      Width = 52
+      Height = 13
+      Caption = 'Fecha final'
+    end
+    object dbcDelitos: TDBLookupComboBox
+      Left = 96
+      Top = 11
+      Width = 145
+      Height = 21
+      KeyField = 'ID'
+      ListField = 'NOMBRE'
+      ListSource = dmData.dsDelitos
+      TabOrder = 0
+    end
+    object dtpInicial: TDateTimePicker
+      Left = 344
+      Top = 11
+      Width = 186
+      Height = 21
+      Date = 43022.067078912030000000
+      Time = 43022.067078912030000000
+      TabOrder = 1
+    end
+    object btnConsultar: TButton
+      Left = 816
+      Top = 9
+      Width = 75
+      Height = 25
+      Caption = 'Consultar'
+      TabOrder = 2
+      OnClick = btnConsultarClick
+    end
+  end
+  object dtpFinal: TDateTimePicker
+    Left = 616
+    Top = 11
+    Width = 186
+    Height = 21
+    Date = 43022.067078912030000000
+    Time = 43022.067078912030000000
+    TabOrder = 3
   end
   object MainMenu: TMainMenu
     Left = 192
@@ -55,7 +123,6 @@ object frmMain: TfrmMain
     end
     object Heatmap1: TMenuItem
       Caption = 'Heatmap'
-      OnClick = Heatmap1Click
     end
   end
   object ActionList: TActionList

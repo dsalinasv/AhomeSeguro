@@ -26,6 +26,7 @@ object srvMethods: TsrvMethods
   end
   object dspIncidencias: TDataSetProvider
     DataSet = qryIncidencias
+    Options = [poAllowCommandText, poUseQuoteChar]
     Left = 96
     Top = 104
   end

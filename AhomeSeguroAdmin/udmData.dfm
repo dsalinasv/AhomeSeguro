@@ -11,11 +11,13 @@ object dmData: TdmData
       'DriverName=DataSnap'
       'HostName=cevaf.redirectme.net'
       'port=211')
+    Connected = True
     Left = 24
     Top = 16
   end
   object dspConnection: TDSProviderConnection
     ServerClassName = 'TsrvMethods'
+    Connected = True
     SQLConnection = cntData
     Left = 88
     Top = 16
@@ -32,6 +34,14 @@ object dmData: TdmData
   object dsDelitos: TDataSource
     DataSet = cdsDelitos
     Left = 88
+    Top = 64
+  end
+  object cdsIncidencias: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspIncidencias'
+    RemoteServer = dspConnection
+    Left = 152
     Top = 64
   end
 end
