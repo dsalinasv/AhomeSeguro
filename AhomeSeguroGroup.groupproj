@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1A3CF827-393B-44DD-A829-97D542BCB610}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DelitosServer\AhomeSeguroServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DelitosAdmin\AhomeSeguroAdmin.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DelitosMovil\AhomeSeguro.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AhomeSeguroServer">
+        <MSBuild Projects="DelitosServer\AhomeSeguroServer.dproj"/>
+    </Target>
+    <Target Name="AhomeSeguroServer:Clean">
+        <MSBuild Projects="DelitosServer\AhomeSeguroServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AhomeSeguroServer:Make">
+        <MSBuild Projects="DelitosServer\AhomeSeguroServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AhomeSeguroAdmin">
+        <MSBuild Projects="DelitosAdmin\AhomeSeguroAdmin.dproj"/>
+    </Target>
+    <Target Name="AhomeSeguroAdmin:Clean">
+        <MSBuild Projects="DelitosAdmin\AhomeSeguroAdmin.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AhomeSeguroAdmin:Make">
+        <MSBuild Projects="DelitosAdmin\AhomeSeguroAdmin.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AhomeSeguro">
+        <MSBuild Projects="DelitosMovil\AhomeSeguro.dproj"/>
+    </Target>
+    <Target Name="AhomeSeguro:Clean">
+        <MSBuild Projects="DelitosMovil\AhomeSeguro.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AhomeSeguro:Make">
+        <MSBuild Projects="DelitosMovil\AhomeSeguro.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AhomeSeguroServer;AhomeSeguroAdmin;AhomeSeguro"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AhomeSeguroServer:Clean;AhomeSeguroAdmin:Clean;AhomeSeguro:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AhomeSeguroServer:Make;AhomeSeguroAdmin:Make;AhomeSeguro:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
