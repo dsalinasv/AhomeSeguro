@@ -332,7 +332,6 @@
         <VerInfo_Build>4</VerInfo_Build>
         <AUP_ACCESS_NETWORK_STATE>true</AUP_ACCESS_NETWORK_STATE>
         <EL_Maps>true</EL_Maps>
-        <BT_BuildType>AppStore</BT_BuildType>
         <PF_AliasKeyPass>857E479B5FC407DEA359716CD16AE34E81C60513A04997C197A00FAA8E6C3C8BDB0CA39AE3191C62C1BB5726FAB3C317BAE9365104262291163B45CFE5942290C916F30AD544FACCD3873B41</PF_AliasKeyPass>
         <Android_LauncherIcon36>..\Imagenes\Logotipo\Laucher Icon\laucher_36.png</Android_LauncherIcon36>
         <Android_LauncherIcon48>..\Imagenes\Logotipo\Laucher Icon\laucher_48.png</Android_LauncherIcon48>
@@ -346,6 +345,7 @@
         <AUP_READ_EXTERNAL_STORAGE>false</AUP_READ_EXTERNAL_STORAGE>
         <PF_KeyStorePass>857E479B645855D8A342711DD129E36881D0051BA043979397B40FAB8E363C94DB04A3D7E3401C39C1CC5752FACFC338BAF83613042722C3164B45C2E5BA22DBC90AF35DEEDAA895D3873B41</PF_KeyStorePass>
         <AUP_WRITE_EXTERNAL_STORAGE>false</AUP_WRITE_EXTERNAL_STORAGE>
+        <BT_BuildType>AppStore</BT_BuildType>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
@@ -394,14 +394,14 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
-                <DeployFile LocalName="Android\Release\styles.xml" Configuration="Release" Class="AndroidSplashStyles">
+                <DeployFile LocalName="..\Imagenes\Logotipo\Splash Image\AS_426x320.png" Configuration="Release" Class="Android_SplashImage426">
                     <Platform Name="Android">
+                        <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\Imagenes\Logotipo\Laucher Icon\laucher_36.png" Configuration="Release" Class="Android_LauncherIcon36">
+                <DeployFile LocalName="Android\Release\styles.xml" Configuration="Release" Class="AndroidSplashStyles">
                     <Platform Name="Android">
-                        <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -413,18 +413,6 @@
                 </DeployFile>
                 <DeployFile LocalName="Android\Release\splash_image_def.xml" Configuration="Release" Class="AndroidSplashImageDef">
                     <Platform Name="Android">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\Imagenes\Logotipo\Splash Image\AS_426x320.png" Configuration="Release" Class="Android_SplashImage426">
-                    <Platform Name="Android">
-                        <RemoteName>splash_image.png</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\Imagenes\Logotipo\Splash Image\AS_960x720.png" Configuration="Release" Class="Android_SplashImage960">
-                    <Platform Name="Android">
-                        <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -452,12 +440,6 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\Imagenes\Logotipo\Laucher Icon\laucher_72.png" Configuration="Release" Class="Android_LauncherIcon72">
-                    <Platform Name="Android">
-                        <RemoteName>ic_launcher.png</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png" Configuration="Debug" Class="Android_SplashImage426">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
@@ -467,6 +449,18 @@
                 <DeployFile LocalName="Android\Release\libAhomeSeguro.so" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Android">
                         <RemoteName>libAhomeSeguro.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\Imagenes\Logotipo\Laucher Icon\laucher_96.png" Configuration="Release" Class="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteName>ic_launcher.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\Imagenes\Logotipo\Splash Image\AS_470x320.png" Configuration="Release" Class="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -499,6 +493,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="..\Imagenes\Logotipo\Splash Image\AS_640x480.png" Configuration="Release" Class="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteName>splash_image.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Android\Debug\splash_image_def.xml" Configuration="Debug" Class="AndroidSplashImageDef">
                     <Platform Name="Android">
                         <Overwrite>true</Overwrite>
@@ -515,7 +515,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\Imagenes\Logotipo\Laucher Icon\laucher_144.png" Configuration="Release" Class="Android_LauncherIcon144">
+                <DeployFile LocalName="..\Imagenes\Logotipo\Laucher Icon\laucher_72.png" Configuration="Release" Class="Android_LauncherIcon72">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -524,6 +524,12 @@
                 <DeployFile LocalName="Win32\Debug\AhomeSeguro.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>AhomeSeguro.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\Imagenes\Logotipo\Laucher Icon\laucher_36.png" Configuration="Release" Class="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -566,12 +572,6 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\Imagenes\Logotipo\Laucher Icon\laucher_96.png" Configuration="Release" Class="Android_LauncherIcon96">
-                    <Platform Name="Android">
-                        <RemoteName>ic_launcher.png</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile LocalName="Android\Debug\libAhomeSeguro.so" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Android">
                         <RemoteName>libAhomeSeguro.so</RemoteName>
@@ -589,15 +589,21 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\Imagenes\Logotipo\Splash Image\AS_470x320.png" Configuration="Release" Class="Android_SplashImage470">
+                <DeployFile LocalName="..\Imagenes\Logotipo\Laucher Icon\laucher_144.png" Configuration="Release" Class="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteName>ic_launcher.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\Imagenes\Logotipo\Splash Image\AS_960x720.png" Configuration="Release" Class="Android_SplashImage960">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\Imagenes\Logotipo\Splash Image\AS_640x480.png" Configuration="Release" Class="Android_SplashImage640">
+                <DeployFile LocalName="..\Imagenes\Logotipo\Laucher Icon\laucher_48.png" Configuration="Release" Class="Android_LauncherIcon48">
                     <Platform Name="Android">
-                        <RemoteName>splash_image.png</RemoteName>
+                        <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -609,12 +615,6 @@
                 <DeployFile LocalName="Android\Release\classes.dex" Configuration="Release" Class="AndroidClassesDexFile">
                     <Platform Name="Android">
                         <RemoteName>classes.dex</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\Imagenes\Logotipo\Laucher Icon\laucher_48.png" Configuration="Release" Class="Android_LauncherIcon48">
-                    <Platform Name="Android">
-                        <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

@@ -10,7 +10,8 @@ uses
   System.Actions, FMX.ActnList, FMX.StdActns, FMX.MediaLibrary.Actions,
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.DBScope, FMX.ListBox,
-  FMX.Layouts, FMX.DateTimeCtrls, FGX.ProgressDialog;
+  FMX.Layouts, FMX.DateTimeCtrls, FGX.ProgressDialog, System.ImageList,
+  FMX.ImgList;
 
 type
   TfrmMain = class(TForm)
@@ -23,6 +24,21 @@ type
     BindSourceDB2: TBindSourceDB;
     TabControl1: TTabControl;
     Captura: TTabItem;
+    TabItem2: TTabItem;
+    TabItem1: TTabItem;
+    Layout1: TLayout;
+    Layout10: TLayout;
+    Label2: TLabel;
+    btnTakePhoto: TButton;
+    imgCameraView: TImage;
+    Layout9: TLayout;
+    Label1: TLabel;
+    MapView1: TMapView;
+    BindSourceDB3: TBindSourceDB;
+    NextTabAction1: TNextTabAction;
+    ToolBar1: TToolBar;
+    Label5: TLabel;
+    Rectangle1: TRectangle;
     ScrollBox1: TScrollBox;
     Layout2: TLayout;
     DateEdit1: TDateEdit;
@@ -38,34 +54,26 @@ type
     Layout8: TLayout;
     Label3: TLabel;
     ComboBox1: TComboBox;
-    Layout11: TLayout;
-    btnEnviar: TButton;
-    TabItem2: TTabItem;
-    TabItem1: TTabItem;
-    Layout1: TLayout;
-    Layout10: TLayout;
-    Label2: TLabel;
-    btnTakePhoto: TButton;
-    imgCameraView: TImage;
-    Layout6: TLayout;
-    Button1: TButton;
-    Layout9: TLayout;
-    Label1: TLabel;
-    MapView1: TMapView;
-    Layout7: TLayout;
-    Button2: TButton;
-    BindSourceDB3: TBindSourceDB;
-    LinkListControlToField1: TLinkListControlToField;
-    NextTabAction1: TNextTabAction;
-    ToolBar1: TToolBar;
-    Label5: TLabel;
-    Rectangle1: TRectangle;
+    Circle1: TCircle;
+    Button3: TButton;
+    StatusBar1: TStatusBar;
+    ImageList1: TImageList;
+    Rectangle2: TRectangle;
+    GridLayout1: TGridLayout;
+    imgCaptura: TImage;
+    Image4: TImage;
+    imgMapa: TImage;
+    Image5: TImage;
+    imgCamara: TImage;
     procedure LocationSensorLocationChanged(Sender: TObject; const OldLocation,
       NewLocation: TLocationCoord2D);
     procedure MapView1MapClick(const Position: TMapCoordinate);
     procedure TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
     procedure btnEnviarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure btnCapturaClick(Sender: TObject);
+    procedure btnMapaClick(Sender: TObject);
+    procedure btnCamaraClick(Sender: TObject);
   private
     { Private declarations }
     FActivityDialogThread: TThread;
@@ -86,54 +94,79 @@ uses
 var
   Markers : array of  TMapMarker;
 
+procedure TfrmMain.btnCamaraClick(Sender: TObject);
+begin
+  TabControl1.TabIndex:= 2;
+end;
+
 procedure TfrmMain.btnEnviarClick(Sender: TObject);
 var
   memStream: TMemoryStream;
 begin
-  if length(Markers) = 0 then
-  begin
-    ShowMessage('Elige la ubicación en el mapa');
-  end
-  else if imgCameraView.Bitmap.IsEmpty then
-  begin
-    ShowMessage('Toma la foto de evidencia');
-  end
-  else
-  begin
-    FActivityDialogThread := TThread.CreateAnonymousThread(procedure
-    begin
-      try
-        TThread.Synchronize(nil, procedure
+  case TabControl1.TabIndex of
+    0: begin
+      NextTabAction1.Execute;
+    end;
+    1: begin
+      NextTabAction1.Execute;
+    end;
+    2: begin
+      if length(Markers) = 0 then
+      begin
+        ShowMessage('Elige la ubicación en el mapa');
+      end
+      else if imgCameraView.Bitmap.IsEmpty then
+      begin
+        ShowMessage('Toma la foto de evidencia');
+      end
+      else
+      begin
+        FActivityDialogThread := TThread.CreateAnonymousThread(procedure
         begin
-          fgActivityDialog.Show;
+          try
+            TThread.Synchronize(nil, procedure
+            begin
+              fgActivityDialog.Show;
+            end);
+            with dmData do
+            begin
+              cdsIncidencias.Insert;
+              cdsIncidenciasFECHAHORA.AsDateTime:= DateEdit1.Date + TimeEdit1.Time;
+              cdsIncidenciasPERSONA.Value:= IfThen(rbAfectado.IsChecked, 1, 0);
+              cdsIncidenciasID_DELITO.Value:= cdsDelitosID.Value;
+              cdsIncidenciasLATITUD.Value:= Markers[0].Descriptor.Position.Latitude;
+              cdsIncidenciasLONGITUD.Value:= Markers[0].Descriptor.Position.Longitude;
+              memStream:= TMemoryStream.Create;
+              imgCameraView.Bitmap.SaveToStream(memStream);
+              cdsIncidenciasFOTO.LoadFromStream(memStream);
+              cdsIncidencias.Post;
+            end;
+            if TThread.CheckTerminated then
+              Exit;
+          finally
+            if not TThread.CheckTerminated then
+              TThread.Synchronize(nil, procedure
+              begin
+                fgActivityDialog.Hide;
+                Close;
+              end);
+          end;
         end);
-        with dmData do
-        begin
-          cdsIncidencias.Insert;
-          cdsIncidenciasFECHAHORA.AsDateTime:= DateEdit1.Date + TimeEdit1.Time;
-          cdsIncidenciasPERSONA.Value:= IfThen(rbAfectado.IsChecked, 1, 0);
-          cdsIncidenciasID_DELITO.Value:= cdsDelitosID.Value;
-          cdsIncidenciasLATITUD.Value:= Markers[0].Descriptor.Position.Latitude;
-          cdsIncidenciasLONGITUD.Value:= Markers[0].Descriptor.Position.Longitude;
-          memStream:= TMemoryStream.Create;
-          imgCameraView.Bitmap.SaveToStream(memStream);
-          cdsIncidenciasFOTO.LoadFromStream(memStream);
-          cdsIncidencias.Post;
-        end;
-        if TThread.CheckTerminated then
-          Exit;
-      finally
-        if not TThread.CheckTerminated then
-          TThread.Synchronize(nil, procedure
-          begin
-            fgActivityDialog.Hide;
-            Close;
-          end);
+        FActivityDialogThread.FreeOnTerminate := False;
+        FActivityDialogThread.Start;
       end;
-    end);
-    FActivityDialogThread.FreeOnTerminate := False;
-    FActivityDialogThread.Start;
+    end;
   end;
+end;
+
+procedure TfrmMain.btnMapaClick(Sender: TObject);
+begin
+  TabControl1.TabIndex:= 1;
+end;
+
+procedure TfrmMain.btnCapturaClick(Sender: TObject);
+begin
+  TabControl1.TabIndex:= 0;
 end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
