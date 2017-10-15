@@ -6,11 +6,12 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.Layouts, System.Sensors,
-  System.Sensors.Components;
+  System.Sensors.Components, FMX.Objects;
 
 type
   TfrmMain = class(TForm)
     LocationSensor: TLocationSensor;
+    Image1: TImage;
     procedure LocationSensorLocationChanged(Sender: TObject; const OldLocation,
       NewLocation: TLocationCoord2D);
     procedure FormCreate(Sender: TObject);
