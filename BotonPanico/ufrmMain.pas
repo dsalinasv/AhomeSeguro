@@ -9,7 +9,7 @@ uses
   System.Sensors.Components;
 
 type
-  TForm1 = class(TForm)
+  TfrmMain = class(TForm)
     LocationSensor: TLocationSensor;
     procedure LocationSensorLocationChanged(Sender: TObject; const OldLocation,
       NewLocation: TLocationCoord2D);
@@ -21,7 +21,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmMain: TfrmMain;
 
 implementation
 
@@ -29,12 +29,12 @@ implementation
 
 uses udmData;
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TfrmMain.FormCreate(Sender: TObject);
 begin
   LocationSensor.Active:= True;
 end;
 
-procedure TForm1.LocationSensorLocationChanged(Sender: TObject;
+procedure TfrmMain.LocationSensorLocationChanged(Sender: TObject;
   const OldLocation, NewLocation: TLocationCoord2D);
 begin
   dmData.Alerta('Emergencia', NewLocation.Latitude, NewLocation.Longitude);

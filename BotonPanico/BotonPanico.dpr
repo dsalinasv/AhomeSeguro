@@ -3,7 +3,7 @@ program BotonPanico;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  ufrmMain in 'ufrmMain.pas' {Form1},
+  ufrmMain in 'ufrmMain.pas' {frmMain},
   udmData in 'udmData.pas' {dmData: TDataModule};
 
 {$R *.res}
@@ -11,6 +11,6 @@ uses
 begin
   Application.Initialize;
   Application.CreateForm(TdmData, dmData);
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfrmMain, frmMain);
   Application.Run;
 end.

@@ -1,7 +1,7 @@
-object Form1: TForm1
+object frmMain: TfrmMain
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'Bot'#243'n de p'#225'nico'
   ClientHeight = 480
   ClientWidth = 640
   FormFactor.Width = 320
