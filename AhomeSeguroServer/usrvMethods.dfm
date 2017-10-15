@@ -33,7 +33,7 @@ object srvMethods: TsrvMethods
   object qryIncidencias: TFDQuery
     Connection = cntData
     SQL.Strings = (
-      'select * from incidencias')
+      'select * from incidencias where id = '#39#39)
     Left = 96
     Top = 56
   end
