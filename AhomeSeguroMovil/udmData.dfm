@@ -29,11 +29,14 @@ object dmData: TdmData
     Top = 72
     object cdsDelitosID: TStringField
       FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
       Size = 38
     end
     object cdsDelitosNOMBRE: TStringField
       FieldName = 'NOMBRE'
+      Origin = 'NOMBRE'
       Size = 50
     end
   end

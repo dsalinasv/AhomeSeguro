@@ -3,7 +3,7 @@ object frmMain: TfrmMain
   Top = 0
   Caption = 'Form1'
   ClientHeight = 420
-  ClientWidth = 622
+  ClientWidth = 533
   FormFactor.Width = 520
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -11,24 +11,24 @@ object frmMain: TfrmMain
   DesignerMasterStyle = 0
   object TabControl1: TTabControl
     Align = Client
-    Size.Width = 622.000000000000000000
-    Size.Height = 326.000000000000000000
+    Size.Width = 533.000000000000000000
+    Size.Height = 332.000000000000000000
     Size.PlatformDefault = False
-    TabIndex = 2
+    TabIndex = 0
     TabOrder = 13
     TabPosition = None
     Sizes = (
-      622s
-      326s
-      622s
-      326s
-      622s
-      326s)
+      533s
+      332s
+      533s
+      332s
+      533s
+      332s)
     object Captura: TTabItem
       CustomIcon = <
         item
         end>
-      IsSelected = False
+      IsSelected = True
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -39,12 +39,12 @@ object frmMain: TfrmMain
       ExplicitSize.cy = 26.000000000000000000
       object ScrollBox1: TScrollBox
         Align = Client
-        Size.Width = 622.000000000000000000
-        Size.Height = 326.000000000000000000
+        Size.Width = 533.000000000000000000
+        Size.Height = 332.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 7
-        Viewport.Width = 622.000000000000000000
-        Viewport.Height = 326.000000000000000000
+        Viewport.Width = 533.000000000000000000
+        Viewport.Height = 332.000000000000000000
         object Layout2: TLayout
           Align = Top
           Padding.Left = 5.000000000000000000
@@ -57,7 +57,7 @@ object frmMain: TfrmMain
           Margins.Bottom = 5.000000000000000000
           Position.X = 10.000000000000000000
           Position.Y = 10.000000000000000000
-          Size.Width = 602.000000000000000000
+          Size.Width = 513.000000000000000000
           Size.Height = 63.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 9
@@ -66,7 +66,7 @@ object frmMain: TfrmMain
             Align = Top
             Position.X = 5.000000000000000000
             Position.Y = 30.000000000000000000
-            Size.Width = 592.000000000000000000
+            Size.Width = 503.000000000000000000
             Size.Height = 22.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 25
@@ -75,7 +75,7 @@ object frmMain: TfrmMain
             Align = Top
             Position.X = 5.000000000000000000
             Position.Y = 5.000000000000000000
-            Size.Width = 592.000000000000000000
+            Size.Width = 503.000000000000000000
             Size.Height = 25.000000000000000000
             Size.PlatformDefault = False
             Text = 'Elije la fecha del incidente'
@@ -94,7 +94,7 @@ object frmMain: TfrmMain
           Margins.Bottom = 5.000000000000000000
           Position.X = 10.000000000000000000
           Position.Y = 88.000000000000000000
-          Size.Width = 602.000000000000000000
+          Size.Width = 513.000000000000000000
           Size.Height = 63.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 10
@@ -103,7 +103,7 @@ object frmMain: TfrmMain
             Align = Top
             Position.X = 5.000000000000000000
             Position.Y = 30.000000000000000000
-            Size.Width = 592.000000000000000000
+            Size.Width = 503.000000000000000000
             Size.Height = 22.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 24
@@ -112,7 +112,7 @@ object frmMain: TfrmMain
             Align = Top
             Position.X = 5.000000000000000000
             Position.Y = 5.000000000000000000
-            Size.Width = 592.000000000000000000
+            Size.Width = 503.000000000000000000
             Size.Height = 25.000000000000000000
             Size.PlatformDefault = False
             Text = 'Elije la hora del incidente'
@@ -131,7 +131,7 @@ object frmMain: TfrmMain
           Margins.Bottom = 5.000000000000000000
           Position.X = 10.000000000000000000
           Position.Y = 166.000000000000000000
-          Size.Width = 602.000000000000000000
+          Size.Width = 513.000000000000000000
           Size.Height = 67.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 11
@@ -139,7 +139,7 @@ object frmMain: TfrmMain
             Align = Top
             Position.X = 5.000000000000000000
             Position.Y = 5.000000000000000000
-            Size.Width = 592.000000000000000000
+            Size.Width = 503.000000000000000000
             Size.Height = 25.000000000000000000
             Size.PlatformDefault = False
             Text = 'Elije la opci'#243'n que corresponda'
@@ -149,7 +149,7 @@ object frmMain: TfrmMain
             Align = Top
             Position.X = 5.000000000000000000
             Position.Y = 30.000000000000000000
-            Size.Width = 592.000000000000000000
+            Size.Width = 503.000000000000000000
             Size.Height = 27.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 17
@@ -166,7 +166,7 @@ object frmMain: TfrmMain
             object rbTestigo: TRadioButton
               Align = Right
               GroupName = 'Persona'
-              Position.X = 503.000000000000000000
+              Position.X = 414.000000000000000000
               Size.Width = 89.000000000000000000
               Size.Height = 27.000000000000000000
               Size.PlatformDefault = False
@@ -187,7 +187,7 @@ object frmMain: TfrmMain
           Margins.Bottom = 5.000000000000000000
           Position.X = 10.000000000000000000
           Position.Y = 248.000000000000000000
-          Size.Width = 602.000000000000000000
+          Size.Width = 513.000000000000000000
           Size.Height = 63.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 12
@@ -195,7 +195,7 @@ object frmMain: TfrmMain
             Align = Top
             Position.X = 5.000000000000000000
             Position.Y = 5.000000000000000000
-            Size.Width = 592.000000000000000000
+            Size.Width = 503.000000000000000000
             Size.Height = 25.000000000000000000
             Size.PlatformDefault = False
             Text = 'Elije el tipo de delito'
@@ -203,16 +203,9 @@ object frmMain: TfrmMain
           end
           object ComboBox1: TComboBox
             Align = Top
-            Items.Strings = (
-              'Violaci'#243'n'
-              'Asalto'
-              'jjj'
-              'Trata de blancas'
-              'Venta de Drogas')
-            ItemIndex = 0
             Position.X = 5.000000000000000000
             Position.Y = 30.000000000000000000
-            Size.Width = 592.000000000000000000
+            Size.Width = 503.000000000000000000
             Size.Height = 22.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 10
@@ -243,24 +236,24 @@ object frmMain: TfrmMain
         Margins.Top = 10.000000000000000000
         Margins.Right = 10.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Size.Width = 602.000000000000000000
-        Size.Height = 311.000000000000000000
+        Size.Width = 513.000000000000000000
+        Size.Height = 317.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 13
         object Label1: TLabel
           Align = Top
           Position.X = 5.000000000000000000
           Position.Y = 5.000000000000000000
-          Size.Width = 592.000000000000000000
-          Size.Height = 25.000000000000000000
+          Size.Width = 503.000000000000000000
+          Size.Height = 44.000000000000000000
           Size.PlatformDefault = False
           Text = 'Selecciona la ubicaci'#243'n'
           TabOrder = 0
         end
         object MapView1: TMapView
           Align = Client
-          Size.Width = 592.000000000000000000
-          Size.Height = 276.000000000000000000
+          Size.Width = 503.000000000000000000
+          Size.Height = 263.000000000000000000
           Size.PlatformDefault = False
           Zoom = 14.000000000000000000
           OnMapClick = MapView1MapClick
@@ -271,7 +264,7 @@ object frmMain: TfrmMain
       CustomIcon = <
         item
         end>
-      IsSelected = True
+      IsSelected = False
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -290,22 +283,22 @@ object frmMain: TfrmMain
         Margins.Top = 10.000000000000000000
         Margins.Right = 10.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Size.Width = 602.000000000000000000
-        Size.Height = 311.000000000000000000
+        Size.Width = 513.000000000000000000
+        Size.Height = 317.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 13
         object Layout10: TLayout
           Align = Top
           Position.X = 5.000000000000000000
           Position.Y = 5.000000000000000000
-          Size.Width = 592.000000000000000000
-          Size.Height = 25.000000000000000000
+          Size.Width = 503.000000000000000000
+          Size.Height = 44.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 24
           object Label2: TLabel
             Align = Left
             Size.Width = 265.000000000000000000
-            Size.Height = 25.000000000000000000
+            Size.Height = 44.000000000000000000
             Size.PlatformDefault = False
             Text = 'Toma la foto de evidencia'
             TabOrder = 10
@@ -315,9 +308,9 @@ object frmMain: TfrmMain
             Align = Right
             Enabled = True
             ImageIndex = -1
-            Position.X = 545.000000000000000000
+            Position.X = 456.000000000000000000
             Size.Width = 47.000000000000000000
-            Size.Height = 25.000000000000000000
+            Size.Height = 44.000000000000000000
             Size.PlatformDefault = False
             StyleLookup = 'cameratoolbuttonbordered'
             TabOrder = 0
@@ -328,62 +321,61 @@ object frmMain: TfrmMain
             item
             end>
           Align = Client
-          Size.Width = 592.000000000000000000
-          Size.Height = 276.000000000000000000
+          Size.Width = 503.000000000000000000
+          Size.Height = 263.000000000000000000
           Size.PlatformDefault = False
         end
       end
     end
   end
   object ToolBar1: TToolBar
-    Size.Width = 622.000000000000000000
-    Size.Height = 50.000000000000000000
+    Size.Width = 533.000000000000000000
+    Size.Height = 44.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 21
     object Rectangle1: TRectangle
       Align = Client
       Fill.Color = xFFC30017
       Sides = []
-      Size.Width = 622.000000000000000000
-      Size.Height = 50.000000000000000000
+      Size.Width = 533.000000000000000000
+      Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       object Label5: TLabel
         Align = Client
         StyledSettings = [Family, Size, Style]
-        Size.Width = 622.000000000000000000
-        Size.Height = 50.000000000000000000
+        Margins.Left = 10.000000000000000000
+        Size.Width = 473.000000000000000000
+        Size.Height = 44.000000000000000000
         Size.PlatformDefault = False
         TextSettings.FontColor = claWhite
-        TextSettings.HorzAlign = Center
         Text = 'REALIZA UN REPORTE'
         TabOrder = 0
       end
-    end
-  end
-  object Circle1: TCircle
-    Anchors = [akRight, akBottom]
-    Fill.Color = claDarkgray
-    Position.X = 556.000000000000000000
-    Position.Y = -51.000000000000000000
-    Size.Width = 50.000000000000000000
-    Size.Height = 50.000000000000000000
-    Size.PlatformDefault = False
-    Stroke.Kind = None
-    object Button3: TButton
-      StyledSettings = [Family, Size, Style]
-      Size.Width = 50.000000000000000000
-      Size.Height = 50.000000000000000000
-      Size.PlatformDefault = False
-      StyleLookup = 'arrowrighttoolbuttonbordered'
-      TabOrder = 0
-      Text = 'Siguiente'
-      OnClick = btnEnviarClick
+      object Circle1: TCircle
+        Align = Right
+        Fill.Color = claDarkgray
+        Position.X = 483.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object Button3: TButton
+          StyledSettings = [Family, Size, Style]
+          Size.Width = 50.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'arrowrighttoolbuttonbordered'
+          TabOrder = 0
+          Text = 'Siguiente'
+          OnClick = btnEnviarClick
+        end
+      end
     end
   end
   object StatusBar1: TStatusBar
     Position.Y = 376.000000000000000000
     ShowSizeGrip = True
-    Size.Width = 622.000000000000000000
+    Size.Width = 533.000000000000000000
     Size.Height = 44.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
@@ -391,7 +383,7 @@ object frmMain: TfrmMain
       Align = Client
       Fill.Color = xFFC30017
       Sides = []
-      Size.Width = 622.000000000000000000
+      Size.Width = 533.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
     end
@@ -587,34 +579,10 @@ object frmMain: TfrmMain
       CustomText = 'Siguiente'
     end
   end
-  object BindSourceDB1: TBindSourceDB
-    DataSet = dmData.cdsDelitos
-    ScopeMappings = <>
-    Left = 24
-    Top = 128
-  end
-  object BindingsList1: TBindingsList
-    Methods = <>
-    OutputConverters = <>
-    Left = 28
-    Top = 77
-  end
   object fgActivityDialog: TfgActivityDialog
     Message = 'Enviando'
     Title = 'Espere'
     Left = 112
-    Top = 128
-  end
-  object BindSourceDB2: TBindSourceDB
-    DataSet = dmData.cdsDelitos
-    ScopeMappings = <>
-    Left = 136
-    Top = 640
-  end
-  object BindSourceDB3: TBindSourceDB
-    DataSet = dmData.cdsDelitos
-    ScopeMappings = <>
-    Left = 200
     Top = 128
   end
   object ImageList1: TImageList
@@ -785,5 +753,26 @@ object frmMain: TfrmMain
       end>
     Left = 280
     Top = 80
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = dmData.cdsDelitos
+    ScopeMappings = <>
+    Left = 208
+    Top = 128
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 28
+    Top = 125
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'NOMBRE'
+      Control = ComboBox1
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
   end
 end

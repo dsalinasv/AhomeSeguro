@@ -18,10 +18,7 @@ type
     LocationSensor: TLocationSensor;
     ActionList1: TActionList;
     TakePhotoFromCameraAction1: TTakePhotoFromCameraAction;
-    BindSourceDB1: TBindSourceDB;
-    BindingsList1: TBindingsList;
     fgActivityDialog: TfgActivityDialog;
-    BindSourceDB2: TBindSourceDB;
     TabControl1: TTabControl;
     Captura: TTabItem;
     TabItem2: TTabItem;
@@ -34,7 +31,6 @@ type
     Layout9: TLayout;
     Label1: TLabel;
     MapView1: TMapView;
-    BindSourceDB3: TBindSourceDB;
     NextTabAction1: TNextTabAction;
     ToolBar1: TToolBar;
     Label5: TLabel;
@@ -54,8 +50,6 @@ type
     Layout8: TLayout;
     Label3: TLabel;
     ComboBox1: TComboBox;
-    Circle1: TCircle;
-    Button3: TButton;
     StatusBar1: TStatusBar;
     ImageList1: TImageList;
     Rectangle2: TRectangle;
@@ -65,6 +59,11 @@ type
     imgMapa: TImage;
     Image5: TImage;
     imgCamara: TImage;
+    Circle1: TCircle;
+    Button3: TButton;
+    BindSourceDB1: TBindSourceDB;
+    BindingsList1: TBindingsList;
+    LinkListControlToField1: TLinkListControlToField;
     procedure LocationSensorLocationChanged(Sender: TObject; const OldLocation,
       NewLocation: TLocationCoord2D);
     procedure MapView1MapClick(const Position: TMapCoordinate);
@@ -77,6 +76,7 @@ type
   private
     { Private declarations }
     FActivityDialogThread: TThread;
+    procedure ClearMarkers;
   public
     { Public declarations }
   end;
@@ -99,6 +99,17 @@ begin
   TabControl1.TabIndex:= 2;
 end;
 
+procedure TfrmMain.ClearMarkers;
+var
+  i:integer;
+begin
+  for i:=0 to high(Markers) do
+  begin
+    Markers[i].Remove;
+  end;
+  SetLength(Markers,0);
+end;
+
 procedure TfrmMain.btnEnviarClick(Sender: TObject);
 var
   memStream: TMemoryStream;
@@ -114,10 +125,6 @@ begin
       if length(Markers) = 0 then
       begin
         ShowMessage('Elige la ubicación en el mapa');
-      end
-      else if imgCameraView.Bitmap.IsEmpty then
-      begin
-        ShowMessage('Toma la foto de evidencia');
       end
       else
       begin
@@ -140,7 +147,6 @@ begin
               imgCameraView.Bitmap.SaveToStream(memStream);
               cdsIncidenciasFOTO.LoadFromStream(memStream);
               cdsIncidencias.Post;
-              ShowMessage('Incidencia enviada');
             end;
             if TThread.CheckTerminated then
               Exit;
@@ -148,6 +154,24 @@ begin
             if not TThread.CheckTerminated then
               TThread.Synchronize(nil, procedure
               begin
+                MessageDlg('Enviada, deseas enviar otra?',
+                  System.UITypes.TMsgDlgType.mtInformation,
+                  [System.UITypes.TMsgDlgBtn.mbYes, System.UITypes.TMsgDlgBtn.mbNo], 0,
+                    procedure(const AResult: TModalResult)
+                    begin
+                      case AResult of
+                        mrYes:
+                        begin
+                          ClearMarkers;
+                          imgCameraView.Bitmap.Clear(0);
+                          TabControl1.TabIndex:= 0;
+                        end;
+                        mrNo:
+                        begin
+                          Close;
+                        end;
+                    end;
+                  end);
                 fgActivityDialog.Hide;
               end);
           end;
@@ -186,16 +210,6 @@ begin
 end;
 
 procedure TfrmMain.MapView1MapClick(const Position: TMapCoordinate);
-procedure ClearMarkers;
-var
-  i:integer;
-begin
-  for i:=0 to high(Markers) do
-  begin
-    Markers[i].Remove;
-  end;
-  SetLength(Markers,0);
-end;
 var
   MyMarker: TMapMarkerDescriptor;
 begin
