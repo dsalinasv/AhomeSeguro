@@ -4,7 +4,8 @@ interface
 
 uses
   System.SysUtils, System.Classes, Data.DBXDataSnap, Data.DBXCommon,
-  IPPeerClient, Datasnap.DBClient, Datasnap.DSConnect, Data.DB, Data.SqlExpr;
+  IPPeerClient, Datasnap.DBClient, Datasnap.DSConnect, Data.DB, Data.SqlExpr,
+  Data.FMTBcd;
 
 type
   TdmData = class(TDataModule)
@@ -21,6 +22,7 @@ type
     cdsIncidenciasID_DELITO: TStringField;
     cdsIncidenciasFECHAHORA: TSQLTimeStampField;
     cdsIncidenciasPERSONA: TSmallintField;
+    ssmAlerta: TSqlServerMethod;
     procedure DataModuleCreate(Sender: TObject);
     procedure cdsAfterPost(DataSet: TDataSet);
     procedure cdsNewRecord(DataSet: TDataSet);
@@ -30,6 +32,7 @@ type
     { Private declarations }
   public
     { Public declarations }
+    procedure Alerta(Delito: String; Latitud, Longitud: Double);
   end;
 
 var
@@ -84,6 +87,14 @@ begin
   AsignarEventos;
   cdsDelitos.Open;
   cdsIncidencias.Open;
+end;
+
+procedure TdmData.Alerta(Delito: String; Latitud, Longitud: Double);
+begin
+  ssmAlerta.ParamByName('Delito').Value:= Delito;
+  ssmAlerta.ParamByName('Latitud').Value:= Latitud;
+  ssmAlerta.ParamByName('Longitud').Value:= Longitud;
+  dmData.ssmAlerta.ExecuteMethod;
 end;
 
 end.

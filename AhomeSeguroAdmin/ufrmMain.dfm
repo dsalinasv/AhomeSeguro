@@ -1,7 +1,7 @@
 object frmMain: TfrmMain
   Left = 0
   Top = 0
-  Caption = 'Admin Delitos'
+  Caption = 'Admin Incidencias'
   ClientHeight = 448
   ClientWidth = 968
   Color = clBtnFace
@@ -134,7 +134,7 @@ object frmMain: TfrmMain
     Top = 96
     object actDelitos: TAction
       Category = 'Catalogos'
-      Caption = 'Delitos'
+      Caption = 'Incidencias'
       OnExecute = actExecute
     end
   end
@@ -240,8 +240,8 @@ object frmMain: TfrmMain
       Width = 1000.000000000000000000
     end
     object Page1: TfrxReportPage
-      PaperWidth = 216.000000000000000000
-      PaperHeight = 279.000000000000000000
+      PaperWidth = 215.900000000000000000
+      PaperHeight = 279.400000000000000000
       PaperSize = 1
       LeftMargin = 10.000000000000000000
       RightMargin = 10.000000000000000000

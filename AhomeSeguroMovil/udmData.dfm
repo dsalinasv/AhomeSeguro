@@ -1,7 +1,7 @@
 object dmData: TdmData
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Height = 150
+  Height = 197
   Width = 215
   object cntData: TSQLConnection
     ConnectionName = 'DataSnapCONNECTION'
@@ -72,5 +72,30 @@ object dmData: TdmData
     object cdsIncidenciasPERSONA: TSmallintField
       FieldName = 'PERSONA'
     end
+  end
+  object ssmAlerta: TSqlServerMethod
+    Params = <
+      item
+        DataType = ftWideString
+        Precision = 2000
+        Name = 'Delito'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Precision = 8
+        Name = 'Latitud'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftFloat
+        Precision = 8
+        Name = 'Longitud'
+        ParamType = ptInput
+      end>
+    SQLConnection = cntData
+    ServerMethodName = 'TsrvMethods.Alerta'
+    Left = 24
+    Top = 128
   end
 end

@@ -11,7 +11,7 @@ uses
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.DBScope, FMX.ListBox,
   FMX.Layouts, FMX.DateTimeCtrls, FGX.ProgressDialog, System.ImageList,
-  FMX.ImgList;
+  FMX.ImgList, FMX.Gestures;
 
 type
   TfrmMain = class(TForm)
@@ -59,11 +59,14 @@ type
     imgMapa: TImage;
     Image5: TImage;
     imgCamara: TImage;
-    Circle1: TCircle;
-    Button3: TButton;
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
     LinkListControlToField1: TLinkListControlToField;
+    Circle1: TCircle;
+    Button3: TButton;
+    GestureManager1: TGestureManager;
+    Button1: TButton;
+    actAlerta: TAction;
     procedure LocationSensorLocationChanged(Sender: TObject; const OldLocation,
       NewLocation: TLocationCoord2D);
     procedure MapView1MapClick(const Position: TMapCoordinate);
@@ -73,8 +76,11 @@ type
     procedure btnCapturaClick(Sender: TObject);
     procedure btnMapaClick(Sender: TObject);
     procedure btnCamaraClick(Sender: TObject);
+    procedure actAlertaExecute(Sender: TObject);
   private
     { Private declarations }
+    Latitude: Double;
+    Longitude: Double;
     FActivityDialogThread: TThread;
     procedure ClearMarkers;
   public
@@ -93,6 +99,12 @@ uses
 
 var
   Markers : array of  TMapMarker;
+
+procedure TfrmMain.actAlertaExecute(Sender: TObject);
+begin
+  dmData.Alerta('Emergencia', Latitude, Longitude);
+  Close;
+end;
 
 procedure TfrmMain.btnCamaraClick(Sender: TObject);
 begin
@@ -198,6 +210,7 @@ begin
   TabControl1.TabIndex:= 0;
   DateEdit1.Date:= Date;
   TimeEdit1.Time:= Time;
+  LocationSensor.Active:= True;
 end;
 
 procedure TfrmMain.LocationSensorLocationChanged(Sender: TObject;
@@ -205,7 +218,10 @@ procedure TfrmMain.LocationSensorLocationChanged(Sender: TObject;
 var
   mapCenter: TMapCoordinate;
 begin
-  mapCenter := TMapCoordinate.Create(NewLocation.Latitude, NewLocation.Longitude);
+  actAlerta.Visible:= True;
+  Latitude:= NewLocation.Latitude;
+  Longitude:= NewLocation.Longitude;
+  mapCenter := TMapCoordinate.Create(Latitude, Longitude);
   MapView1.Location := mapCenter;
 end;
 
