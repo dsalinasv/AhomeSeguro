@@ -328,7 +328,7 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Android)'!=''">
-        <VerInfo_Build>8</VerInfo_Build>
+        <VerInfo_Build>9</VerInfo_Build>
         <AUP_ACCESS_NETWORK_STATE>true</AUP_ACCESS_NETWORK_STATE>
         <EL_Maps>true</EL_Maps>
         <Android_LauncherIcon36>..\Imagenes\Logotipo\Laucher Icon\laucher_36.png</Android_LauncherIcon36>
@@ -341,10 +341,11 @@
         <Android_SplashImage640>..\Imagenes\Logotipo\Splash Image\AS_640x480.png</Android_SplashImage640>
         <Android_SplashImage960>..\Imagenes\Logotipo\Splash Image\AS_960x720.png</Android_SplashImage960>
         <AUP_READ_EXTERNAL_STORAGE>false</AUP_READ_EXTERNAL_STORAGE>
-        <PF_AliasKeyPass>54E50DFE644355A9A301713BD13FE36081DA0549A057979297EE0FB48E3E3CD9DB5DA38CE3371C4DC1B0577DFADEC37ABAF93641045722CE16654589E5A6228C1893B967EEDAA895D3873B41</PF_AliasKeyPass>
+        <PF_AliasKeyPass>857E479B645855D8A342711DD129E36881D0051BA043979397B40FAB8E363C94DB04A3D7E3401C39C1CC5752FACFC338BAF83613042722C3164B45C2E5BA22DBC90AF35DEEDAA895D3873B41</PF_AliasKeyPass>
         <AUP_WRITE_EXTERNAL_STORAGE>false</AUP_WRITE_EXTERNAL_STORAGE>
-        <PF_KeyStorePass>857E479B5FC407DECF247131D12CE37981B20541A00D978D97E60FBE8E6C3C8ADB57A3DEE3551C63C1E35725FAC7C317BA95360204642291163A459CE5B722BEC916F341D513FACCBFF83B41</PF_KeyStorePass>
-        <VerInfo_Keys>package=com.embarcadero.ahomeseguro;label=Ahome seguro;versionCode=8;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyCgAbfrlyN-dryNOQlkByW_oDTAqmfqH8w</VerInfo_Keys>
+        <PF_KeyStorePass>54E50DFE644355A9A301713BD13FE36081DA0549A057979297EE0FB48E3E3CD9DB5DA38CE3371C4DC1B0577DFADEC37ABAF93641045722CE16654589E5A6228C1893B967EEDAA895D3873B41</PF_KeyStorePass>
+        <VerInfo_Keys>package=com.embarcadero.ahomeseguro;label=Ahome seguro;versionCode=9;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyCgAbfrlyN-dryNOQlkByW_oDTAqmfqH8w</VerInfo_Keys>
+        <BT_BuildType>AppStore</BT_BuildType>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>

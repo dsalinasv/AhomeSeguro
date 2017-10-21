@@ -63,14 +63,16 @@ type
     BindingsList1: TBindingsList;
     LinkListControlToField1: TLinkListControlToField;
     Circle1: TCircle;
-    Button3: TButton;
     GestureManager1: TGestureManager;
-    Button1: TButton;
+    btnAlerta: TButton;
     actAlerta: TAction;
     actEnviar: TAction;
     Circle2: TCircle;
-    Button2: TButton;
     PreviousTabAction1: TPreviousTabAction;
+    actAnterior: TAction;
+    imgPrev: TImage;
+    imgNext: TImage;
+    imgSend: TImage;
     procedure LocationSensorLocationChanged(Sender: TObject; const OldLocation,
       NewLocation: TLocationCoord2D);
     procedure MapView1MapClick(const Position: TMapCoordinate);
@@ -81,6 +83,7 @@ type
     procedure btnCamaraClick(Sender: TObject);
     procedure actAlertaExecute(Sender: TObject);
     procedure actEnviarExecute(Sender: TObject);
+    procedure actAnteriorExecute(Sender: TObject);
   private
     { Private declarations }
     Latitude: Double;
@@ -110,6 +113,13 @@ begin
   Close;
 end;
 
+procedure TfrmMain.actAnteriorExecute(Sender: TObject);
+begin
+  imgNext.Visible:= True;
+  imgSend.Visible:= False;
+  PreviousTabAction1.Execute;
+end;
+
 procedure TfrmMain.actEnviarExecute(Sender: TObject);
 var
   memStream: TMemoryStream;
@@ -120,6 +130,8 @@ begin
     end;
     1: begin
       NextTabAction1.Execute;
+      imgSend.Visible:= True;
+      imgNext.Visible:= False;
     end;
     2: begin
       if length(Markers) = 0 then
@@ -154,7 +166,7 @@ begin
             if not TThread.CheckTerminated then
               TThread.Synchronize(nil, procedure
               begin
-                MessageDlg('Enviada, deseas enviar otra?',
+                MessageDlg('Incidencia registrada, ¿Desea realizar otra?',
                   System.UITypes.TMsgDlgType.mtInformation,
                   [System.UITypes.TMsgDlgBtn.mbYes, System.UITypes.TMsgDlgBtn.mbNo], 0,
                     procedure(const AResult: TModalResult)
@@ -165,6 +177,8 @@ begin
                           ClearMarkers;
                           imgCameraView.Bitmap.Clear(0);
                           TabControl1.TabIndex:= 0;
+                          imgNext.Visible:= True;
+                          imgSend.Visible:= False;
                         end;
                         mrNo:
                         begin

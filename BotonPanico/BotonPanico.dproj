@@ -332,6 +332,7 @@
         <VerInfo_Build>2</VerInfo_Build>
         <PF_KeyStorePass>857E479B5FC407DECF247131D12CE37981B20541A00D978D97E60FBE8E6C3C8ADB57A3DEE3551C63C1E35725FAC7C317BA95360204642291163A459CE5B722BEC916F341D513FACCBFF83B41</PF_KeyStorePass>
         <VerInfo_Keys>package=com.embarcadero.botonpanico;label=Botón de pánico;versionCode=2;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
+        <BT_BuildType>AppStore</BT_BuildType>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
