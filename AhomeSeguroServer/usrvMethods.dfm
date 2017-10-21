@@ -5,7 +5,7 @@ object srvMethods: TsrvMethods
   object cntData: TFDConnection
     Params.Strings = (
       'Database=C:\AppData\AHOME_SEGURO.FDB'
-      'Password=auofdsbcs'
+      'Password=masterkey'
       'User_Name=sysdba'
       'DriverID=FB')
     LoginPrompt = False
