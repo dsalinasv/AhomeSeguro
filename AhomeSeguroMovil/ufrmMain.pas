@@ -16,7 +16,7 @@ uses
 type
   TfrmMain = class(TForm)
     LocationSensor: TLocationSensor;
-    ActionList1: TActionList;
+    ActionList: TActionList;
     TakePhotoFromCameraAction1: TTakePhotoFromCameraAction;
     fgActivityDialog: TfgActivityDialog;
     TabControl1: TTabControl;
@@ -67,16 +67,20 @@ type
     GestureManager1: TGestureManager;
     Button1: TButton;
     actAlerta: TAction;
+    actEnviar: TAction;
+    Circle2: TCircle;
+    Button2: TButton;
+    PreviousTabAction1: TPreviousTabAction;
     procedure LocationSensorLocationChanged(Sender: TObject; const OldLocation,
       NewLocation: TLocationCoord2D);
     procedure MapView1MapClick(const Position: TMapCoordinate);
     procedure TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
-    procedure btnEnviarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnCapturaClick(Sender: TObject);
     procedure btnMapaClick(Sender: TObject);
     procedure btnCamaraClick(Sender: TObject);
     procedure actAlertaExecute(Sender: TObject);
+    procedure actEnviarExecute(Sender: TObject);
   private
     { Private declarations }
     Latitude: Double;
@@ -106,23 +110,7 @@ begin
   Close;
 end;
 
-procedure TfrmMain.btnCamaraClick(Sender: TObject);
-begin
-  TabControl1.TabIndex:= 2;
-end;
-
-procedure TfrmMain.ClearMarkers;
-var
-  i:integer;
-begin
-  for i:=0 to high(Markers) do
-  begin
-    Markers[i].Remove;
-  end;
-  SetLength(Markers,0);
-end;
-
-procedure TfrmMain.btnEnviarClick(Sender: TObject);
+procedure TfrmMain.actEnviarExecute(Sender: TObject);
 var
   memStream: TMemoryStream;
 begin
@@ -193,6 +181,22 @@ begin
       end;
     end;
   end;
+end;
+
+procedure TfrmMain.btnCamaraClick(Sender: TObject);
+begin
+  TabControl1.TabIndex:= 2;
+end;
+
+procedure TfrmMain.ClearMarkers;
+var
+  i:integer;
+begin
+  for i:=0 to high(Markers) do
+  begin
+    Markers[i].Remove;
+  end;
+  SetLength(Markers,0);
 end;
 
 procedure TfrmMain.btnMapaClick(Sender: TObject);

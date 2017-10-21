@@ -1,13 +1,14 @@
 object frmMain: TfrmMain
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'Reporte de incidencias'
   ClientHeight = 420
   ClientWidth = 533
   FormFactor.Width = 520
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   OnCreate = FormCreate
+  Touch.GestureManager = GestureManager1
   DesignerMasterStyle = 0
   object TabControl1: TTabControl
     Align = Client
@@ -38,7 +39,6 @@ object frmMain: TfrmMain
       ExplicitSize.cx = 62.000000000000000000
       ExplicitSize.cy = 26.000000000000000000
       object ScrollBox1: TScrollBox
-        Touch.GestureManager = GestureManager1
         Align = Client
         Size.Width = 533.000000000000000000
         Size.Height = 332.000000000000000000
@@ -388,31 +388,49 @@ object frmMain: TfrmMain
         Size.PlatformDefault = False
         Stroke.Kind = None
         object Button3: TButton
+          Action = actEnviar
+          Enabled = True
           StyledSettings = [Family, Size, Style]
+          ImageIndex = -1
           Size.Width = 50.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'arrowrighttoolbuttonbordered'
           TabOrder = 0
-          Text = 'Siguiente'
-          OnClick = btnEnviarClick
         end
       end
       object Button1: TButton
         Action = actAlerta
-        Align = Left
+        Align = Center
         Enabled = True
         ImageIndex = -1
         Margins.Left = 10.000000000000000000
         Margins.Top = 10.000000000000000000
         Margins.Bottom = 10.000000000000000000
-        Position.X = 10.000000000000000000
-        Position.Y = 10.000000000000000000
         Size.Width = 105.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         Visible = False
+      end
+      object Circle2: TCircle
+        Align = Left
+        Fill.Color = claDarkgray
+        Size.Width = 50.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object Button2: TButton
+          Action = PreviousTabAction1
+          Enabled = True
+          StyledSettings = [Family, Size, Style]
+          ImageIndex = -1
+          Size.Width = 50.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'arrowlefttoolbuttonbordered'
+          TabOrder = 0
+        end
       end
     end
     object GridLayout1: TGridLayout
@@ -594,7 +612,7 @@ object frmMain: TfrmMain
     Left = 200
     Top = 80
   end
-  object ActionList1: TActionList
+  object ActionList: TActionList
     Left = 112
     Top = 80
     object TakePhotoFromCameraAction1: TTakePhotoFromCameraAction
@@ -610,6 +628,13 @@ object frmMain: TfrmMain
       Text = 'Enviar alerta'
       Visible = False
       OnExecute = actAlertaExecute
+    end
+    object actEnviar: TAction
+      OnExecute = actEnviarExecute
+    end
+    object PreviousTabAction1: TPreviousTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
     end
   end
   object fgActivityDialog: TfgActivityDialog
@@ -814,11 +839,18 @@ object frmMain: TfrmMain
     Top = 128
     GestureData = <
       item
-        Control = ScrollBox1
+        Control = Owner
         Collection = <
           item
-            Action = NextTabAction1
-            GestureID = sgiRightLeft
+            GestureID = sgiLeftRight
+          end
+          item
+            Action = actEnviar
+            GestureID = sgiLeft
+          end
+          item
+            Action = PreviousTabAction1
+            GestureID = sgiRight
           end>
       end>
   end
